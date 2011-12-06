@@ -10,11 +10,13 @@ public class Time implements Comparable<Time>{
 	public Time(int hour, int min){
 		this.hour = hour;
 		this.min = min;
+		normal();
 	}
 	
 	public Time(int min){
 		this.hour = 0;
 		this.min = min;
+		normal();
 	}
 	
 	public Time(String time){
