@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 import exercise5.Time;
 
-public class quicksort {
+public class Quicksort {
     static int compares;
     static int recursion;
     static int swap;
@@ -75,7 +75,6 @@ public class quicksort {
             quickSort(a, q, r);
         }
     }
-
     
     static <T extends Comparable<T>> int partition(T[] a, int l, int r) {
         assert (l <= r);
