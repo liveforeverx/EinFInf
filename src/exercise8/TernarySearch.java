@@ -35,28 +35,22 @@ public class TernarySearch {
         return ternaryRec(a, 0, a.length - 1, x);
     }
 
-    public static int ternaryRec(int a[], int l, int r, int x) {
+    private static int ternaryRec(int a[], int l, int r, int x) {
         recfunctions++;
+        if (l > r) return UNDEF;
         compares++;
-        if (l > r)
-            return UNDEF;
         int way = (r - l) / 3;
         int m1 = l + way;
         int m2 = m1 + way;
         compares++;
-        if (x == a[m1])
-            return m1;
+        if (x == a[m1]) return m1;
         compares++;
-        if (x == a[m2])
-            return m2;
+        if (x == a[m2]) return m2;
         compares++;
-        if (x < a[m1])
-            return ternaryRec(a, l, m1 - 1, x);
+        if (x < a[m1]) return ternaryRec(a, l, m1 - 1, x);
         compares++;
-        if (x < a[m2])
-            return ternaryRec(a, m1 + 1, m2 - 1, x);
-        else
-            return ternaryRec(a, m2 + 1, r, x);
+        if (x < a[m2]) return ternaryRec(a, m1 + 1, m2 - 1, x);
+        else return ternaryRec(a, m2 + 1, r, x);
     }
 
     public static void print(int[] x){
@@ -94,5 +88,4 @@ public class TernarySearch {
         print();
         
     }
-
 }

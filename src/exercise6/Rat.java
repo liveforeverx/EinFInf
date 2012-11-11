@@ -8,6 +8,10 @@ public class Rat implements Comparable<Rat> {
         num = 0;
         denom = 1;
     }
+    public Rat(int num) {
+        this.num = num;
+        this.denom = 1;
+    }
     public Rat(int num, int denom) throws RuntimeException {
         if (denom == 0)
             throw new RuntimeException("divisor zero");

@@ -82,7 +82,6 @@ public class EquationSolver {
             if(a[i].compareTo(new Rat()) != 0)a[i] = a[i].div(mult);
     }
     
-    // Test if the solution _x is correct for the given equations
     public static boolean proof(Rat[][] _A, Rat[] _x, Rat[] _b) {
         for (int y = 0; y < _A.length; ++y) {
             Rat sum = new Rat();
@@ -113,11 +112,11 @@ public class EquationSolver {
     }
     
     public static void main(String[] args) {
-        Rat[][] a = { {new Rat(2,1), new Rat(4,1), new Rat(6,1)},
-                      {new Rat(1,1), new Rat(6,1), new Rat(4,1)},
-                      {new Rat(3,1), new Rat(7,1), new Rat(0,1)}  };
-        Rat[] b = {new Rat(25,1), new Rat(18,1), new Rat(15,1)};
+        Rat[][] a = { {new Rat(2), new Rat(-3), new Rat(1)},
+                      {new Rat(1), new Rat(-4), new Rat(-1)},
+                      {new Rat(-3), new Rat(9, 2), new Rat(-2)}  };
+        Rat[] b = {new Rat(4), new Rat(2), new Rat(-3)};
         print("start: ", a, b);
-        System.out.println(proof(a, solve(a, b), b));
+        print("Result:", solve(a, b), new Rat());
     }
 }

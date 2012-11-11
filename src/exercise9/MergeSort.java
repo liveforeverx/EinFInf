@@ -61,8 +61,9 @@ public class MergeSort {
         }
     }
 
-    public static <T> void mergeSort(T[] a, Comparator<T> c) {
-        Object[] copy = new Object[a.length];
+    public static <T> void mergeSort(T[] a, Comparator<T> c) {   
+        @SuppressWarnings("unchecked")
+        T[] copy = (T[]) new Object[a.length];
         msort(a, (T[])copy, 0, a.length - 1, c);
     }
     
